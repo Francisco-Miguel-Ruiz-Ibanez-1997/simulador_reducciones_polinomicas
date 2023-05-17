@@ -1,0 +1,155 @@
+﻿\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[top=3cm, bottom=2cm, right=1.5cm, left=3cm]{geometry}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\title{Tablón Alterado}
+\author{$a^nb^nc^n-MT$}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Tabla alterada}
+
+Aquí mostraremos la tabla alterada de manera aleatoria. Lo que se puede encontrar es que:
+\begin{enumerate}
+\item Se haya introducido un carácter que no pertenece al conjunto C.
+\item Se haya cambiado un carácter a otro perteneciente al conjunto C.
+\item Se haya cambiado la primera fila por otra aleatoria del tablón.
+\item Se haya añadido un estado de más.
+\item Eliminar estados para quitar el sentido del tablón, cambiándolos por otro signo.
+\end{enumerate}\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+	\#  &   $q_0$  &   a   &   b   &   c   &   B   &   B   &   B   &   B   &   B   &   B   &   d   &   \#	\\ \hline
+	\#  &   X   &   $q_1$  &   b   &   c   &   B   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   X   &   X   &   $q_2$  &   c   &   B   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   X   &   $q_3$  &   X   &   X   &   B   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	a   &   $q_3$  &   X   &   X   &   X   &   a   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   $q_3$  &   B   &   X   &   X   &   X   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   B   &   $q_0$  &   X   &   X   &   X   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   B   &   X   &   $q_0$  &   X   &   X   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   B   &   X   &   X   &   $q_0$  &   X   &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   B   &   X   &   X   &   X   &   $q_0$  &   B   &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   B   &   X   &   X   &   X   &   B   &   $q_6$  &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   B   &   X   &   X   &   X   &   B   &   $q_6$  &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+	\#  &   B   &   X   &   X   &   X   &   B   &   $q_6$  &   B   &   B   &   B   &   B   &   B   &   \#	\\ \hline
+\end{tabular}
+\end{table}
+\section{Ventanas ilegales}
+En este apartado se mostrarán las ventanas ilegales que nacen del tablón alterado.\newline\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	B   &   B   &   d	\\ \hline
+	B   &   B   &   B	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 1 y columna 11\newline
+Esta ventana es ilegal porque contiene un símbolo ( d ) que no pertenece al conjunto C, el de los símbolos permitidos.
+\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	B   &   d   &   \#	\\ \hline
+	B   &   B   &   \#	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 1 y columna 12\newline
+Esta ventana es ilegal porque contiene un símbolo ( d ) que no pertenece al conjunto C, el de los símbolos permitidos.
+\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	\#  &   X   &   $q_3$	\\ \hline
+	a   &   $q_3$  &   X	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 4 y columna 2\newline
+En la primera fila, primera columna, hay un hastag y en la segunda fila no está debajo de él.\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	X   &   X   &   B	\\ \hline
+	X   &   X   &   a	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 4 y columna 5\newline
+La ventana es ilegal porque, aunque aparentemente pueda parecer legal, no se ha podido llegar a ella desde ninguna transición.\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	X   &   B   &   B	\\ \hline
+	X   &   a   &   B	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 4 y columna 6\newline
+La ventana es ilegal porque, aunque aparentemente pueda parecer legal, no se ha podido llegar a ella desde ninguna transición.\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	B   &   B   &   B	\\ \hline
+	a   &   B   &   B	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 4 y columna 7\newline
+La ventana es ilegal porque, aunque aparentemente pueda parecer legal, no se ha podido llegar a ella desde ninguna transición.\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	a   &   $q_3$  &   X	\\ \hline
+	\#  &   $q_3$  &   B	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 5 y columna 2\newline
+En la segunda fila, primera columna, hay un hastag y en la primera fila no está por encima de él.\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	X   &   X   &   a	\\ \hline
+	X   &   X   &   X	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 5 y columna 5\newline
+La ventana es ilegal porque, aunque aparentemente pueda parecer legal, no se ha podido llegar a ella desde ninguna transición.\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	X   &   a   &   B	\\ \hline
+	X   &   X   &   B	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 5 y columna 6\newline
+La ventana es ilegal porque, aunque aparentemente pueda parecer legal, no se ha podido llegar a ella desde ninguna transición.\newline
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+	a   &   B   &   B	\\ \hline
+	X   &   B   &   B	\\ \hline
+\end{tabular}
+\end{table}
+
+Se trata de la ventana cuya casilla central superior es la celda de la fila 5 y columna 7\newline
+La ventana es ilegal porque, aunque aparentemente pueda parecer legal, no se ha podido llegar a ella desde ninguna transición.\newline
+\end{document}
